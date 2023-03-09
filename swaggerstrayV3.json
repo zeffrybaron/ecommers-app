@@ -1,0 +1,1856 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "Stray",
+		"contact": {},
+		"version": "1.0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:3000/api/v1",
+			"variables": {}
+		}
+	],
+	"paths": {
+		"/admin/orders": {
+			"post": {
+				"tags": [
+					"Order"
+				],
+				"summary": "createOrder",
+				"description": "createOrder",
+				"operationId": "createOrder",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/createOrderRequest"
+									},
+									{
+										"example": {
+											"promo": "MDK",
+											"sender_addres": "fdsafasdfadsfasdM",
+											"receiver_addres": "ACEsdfasdfasdfJ",
+											"customer_name": "Akhmad",
+											"items": [
+												{
+													"id_item": "1",
+													"item_quantity": "5"
+												}
+											]
+										}
+									}
+								]
+							},
+							"example": {
+								"promo": "MDK",
+								"sender_addres": "fdsafasdfadsfasdM",
+								"receiver_addres": "ACEsdfasdfasdfJ",
+								"customer_name": "Akhmad",
+								"items": [
+									{
+										"id_item": "1",
+										"item_quantity": "5"
+									}
+								]
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"Order"
+				],
+				"summary": "getAllOrder",
+				"description": "getAllOrder",
+				"operationId": "getAllOrder",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/member/orders": {
+			"post": {
+				"tags": [
+					"Order"
+				],
+				"summary": "createrOrder",
+				"description": "createrOrder",
+				"operationId": "createrOrder",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/createrOrderRequest"
+									},
+									{
+										"example": {
+											"promo": "MDK",
+											"sender_addres": "Makassar ji tawwa",
+											"receiver_addres": "makassar ji tawwa",
+											"customer_name": "akhmad",
+											"items": [
+												{
+													"id_item": 1,
+													"item_quantity": 2
+												}
+											]
+										}
+									}
+								]
+							},
+							"example": {
+								"promo": "MDK",
+								"sender_addres": "Makassar ji tawwa",
+								"receiver_addres": "makassar ji tawwa",
+								"customer_name": "akhmad",
+								"items": [
+									{
+										"id_item": 1,
+										"item_quantity": 2
+									}
+								]
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"Order"
+				],
+				"summary": "getAllOrder1",
+				"description": "getAllOrder1",
+				"operationId": "getAllOrder1",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/member/orders/34": {
+			"patch": {
+				"tags": [
+					"Order"
+				],
+				"summary": "updateOrder",
+				"description": "updateOrder",
+				"operationId": "updateOrder",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/updateOrderRequest"
+									},
+									{
+										"example": {
+											"sender_addres": "Makassar ji abca",
+											"status": "Paid"
+										}
+									}
+								]
+							},
+							"example": {
+								"sender_addres": "Makassar ji abca",
+								"status": "Paid"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/admin/items": {
+			"post": {
+				"tags": [
+					"Item"
+				],
+				"summary": "createItem",
+				"description": "createItem",
+				"operationId": "createItem",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/createItemRequest"
+									},
+									{
+										"example": {
+											"item_name": "Kipas",
+											"item_category": "Elektronik",
+											"item_price": 50000,
+											"item_image": "https://ik.imagekit.io/34nabbgwi/photo-1662540161854-image_2022-09-07_11-17-11_KsKUnFDUN.png"
+										}
+									}
+								]
+							},
+							"example": {
+								"item_name": "Kipas",
+								"item_category": "Elektronik",
+								"item_price": 50000,
+								"item_image": "https://ik.imagekit.io/34nabbgwi/photo-1662540161854-image_2022-09-07_11-17-11_KsKUnFDUN.png"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"Item"
+				],
+				"summary": "getAllItems",
+				"description": "getAllItems",
+				"operationId": "getAllItems",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/admin/items/2": {
+			"put": {
+				"tags": [
+					"Item"
+				],
+				"summary": "updateItem",
+				"description": "updateItem",
+				"operationId": "updateItem",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/updateItemRequest"
+									},
+									{
+										"example": {
+											"item_name": "Kipas Angin",
+											"item_category": "Elektronik",
+											"item_price": 50000
+										}
+									}
+								]
+							},
+							"example": {
+								"item_name": "Kipas Angin",
+								"item_category": "Elektronik",
+								"item_price": 50000
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Item"
+				],
+				"summary": "deleteItem",
+				"description": "deleteItem",
+				"operationId": "deleteItem",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"Item"
+				],
+				"summary": "getIemsById",
+				"description": "getIemsById",
+				"operationId": "getIemsById",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/admin/upload": {
+			"post": {
+				"tags": [
+					"Item"
+				],
+				"summary": "uploadImage",
+				"description": "uploadImage",
+				"operationId": "uploadImage",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					},
+					{
+						"name": "Content-Type",
+						"in": "header",
+						"description": "",
+						"required": true,
+						"style": "simple",
+						"schema": {
+							"enum": [
+								"application/x-www-form-urlencoded"
+							],
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/x-www-form-urlencoded": {
+							"encoding": {},
+							"schema": {
+								"required": [
+									"photo"
+								],
+								"type": "object",
+								"properties": {
+									"photo": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					},
+					"required": false
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/admin/users": {
+			"get": {
+				"tags": [
+					"User"
+				],
+				"summary": "usersAll",
+				"description": "usersAll",
+				"operationId": "usersAll",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/1": {
+			"get": {
+				"tags": [
+					"User"
+				],
+				"summary": "usersById",
+				"description": "usersById",
+				"operationId": "usersById",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"required": true,
+						"style": "simple",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false,
+				"security": []
+			},
+			"patch": {
+				"tags": [
+					"User"
+				],
+				"summary": "userUpdate",
+				"description": "userUpdate",
+				"operationId": "userUpdate",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/userUpdateRequest"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/12": {
+			"delete": {
+				"tags": [
+					"User"
+				],
+				"summary": "userDelete",
+				"description": "userDelete",
+				"operationId": "userDelete",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/member/users": {
+			"get": {
+				"tags": [
+					"User"
+				],
+				"summary": "userById",
+				"description": "userById",
+				"operationId": "userById",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"User"
+				],
+				"summary": "updateUser",
+				"description": "updateUser",
+				"operationId": "updateUser",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/updateUserRequest"
+									},
+									{
+										"example": {
+											"name": "Akhmad Maknur lagi"
+										}
+									}
+								]
+							},
+							"example": {
+								"name": "Akhmad Maknur lagi"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/admin/promos": {
+			"get": {
+				"tags": [
+					"Promo"
+				],
+				"summary": "getAllPromo",
+				"description": "getAllPromo",
+				"operationId": "getAllPromo",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"Promo"
+				],
+				"summary": "createPromo",
+				"description": "createPromo",
+				"operationId": "createPromo",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/createPromoRequest"
+									},
+									{
+										"example": {
+											"promo_name": "Promo Akhir Tahun",
+											"promo_category": "Fashion",
+											"promo_code": "FASH",
+											"promo_amount": 5000
+										}
+									}
+								]
+							},
+							"example": {
+								"promo_name": "Promo Akhir Tahun",
+								"promo_category": "Fashion",
+								"promo_code": "FASH",
+								"promo_amount": 5000
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/admin/promos/1": {
+			"get": {
+				"tags": [
+					"Promo"
+				],
+				"summary": "getPromoById",
+				"description": "getPromoById",
+				"operationId": "getPromoById",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/admin/promos/2": {
+			"patch": {
+				"tags": [
+					"Promo"
+				],
+				"summary": "updatePromo",
+				"description": "updatePromo",
+				"operationId": "updatePromo",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/updatePromoRequest"
+									},
+									{
+										"example": {
+											"promo_name": "Promo Akhir Tahun",
+											"promo_category": "Fashion",
+											"promo_code": "FASH3",
+											"promo_amount": 6000
+										}
+									}
+								]
+							},
+							"example": {
+								"promo_name": "Promo Akhir Tahun",
+								"promo_category": "Fashion",
+								"promo_code": "FASH3",
+								"promo_amount": 6000
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Promo"
+				],
+				"summary": "deletePromo",
+				"description": "deletePromo",
+				"operationId": "deletePromo",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/member/items": {
+			"get": {
+				"tags": [
+					"Items"
+				],
+				"summary": "getItems",
+				"description": "getItems",
+				"operationId": "getItems",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/member/items/1": {
+			"get": {
+				"tags": [
+					"Items"
+				],
+				"summary": "getItemsById",
+				"description": "getItemsById",
+				"operationId": "getItemsById",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/member/carts": {
+			"post": {
+				"tags": [
+					"Cart"
+				],
+				"summary": "createCart",
+				"description": "createCart",
+				"operationId": "createCart",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/createCartRequest"
+									},
+									{
+										"example": {
+											"id_item": 1,
+											"quantity": 1
+										}
+									}
+								]
+							},
+							"example": {
+								"id_item": 1,
+								"quantity": 1
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"Cart"
+				],
+				"summary": "getAllCart",
+				"description": "getAllCart",
+				"operationId": "getAllCart",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/member/carts/3": {
+			"patch": {
+				"tags": [
+					"Cart"
+				],
+				"summary": "updateCart",
+				"description": "updateCart",
+				"operationId": "updateCart",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/updateCartRequest"
+									},
+									{
+										"example": {
+											"quantity": 2
+										}
+									}
+								]
+							},
+							"example": {
+								"quantity": 2
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Cart"
+				],
+				"summary": "deleteCart",
+				"description": "deleteCart",
+				"operationId": "deleteCart",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/auth/refresh_token": {
+			"post": {
+				"tags": [
+					"Misc"
+				],
+				"summary": "RefreshToken",
+				"description": "Refresh Token",
+				"operationId": "RefreshToken",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/RefreshTokenRequest"
+									},
+									{
+										"example": {
+											"email": "akhmad.maknur@gmail.com",
+											"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFraG1hZC5tYWtudXJAZ21haWwxLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTY2MDg4Nzk1MiwiZXhwIjoxNjYwODkxNTUyfQ.EvFi8la6yv84YsENWRZQPvJMMA8zfrseGj7B8FLuD0I"
+										}
+									}
+								]
+							},
+							"example": {
+								"email": "akhmad.maknur@gmail.com",
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFraG1hZC5tYWtudXJAZ21haWwxLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTY2MDg4Nzk1MiwiZXhwIjoxNjYwODkxNTUyfQ.EvFi8la6yv84YsENWRZQPvJMMA8zfrseGj7B8FLuD0I"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/auth/login": {
+			"post": {
+				"tags": [
+					"Misc"
+				],
+				"summary": "Login",
+				"description": "Login",
+				"operationId": "Login",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/LoginRequest"
+									},
+									{
+										"example": {
+											"user_name": "admin1234",
+											"password": "testing"
+										}
+									}
+								]
+							},
+							"example": {
+								"user_name": "admin1234",
+								"password": "testing"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/auth/register": {
+			"post": {
+				"tags": [
+					"Misc"
+				],
+				"summary": "Register",
+				"description": "Register",
+				"operationId": "Register",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "",
+						"style": "simple",
+						"schema": {
+							"type": "string",
+							"default": "Bearer {token}"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/RegisterRequest"
+									},
+									{
+										"example": {
+											"role": "ADMIN",
+											"email": "akhmad.maknur@gmail.com",
+											"password": "qwerty1234",
+											"user_name": "admin12345",
+											"name": "Akhmad Maknur Member",
+											"no_telephone": "082394717431"
+										}
+									}
+								]
+							},
+							"example": {
+								"role": "ADMIN",
+								"email": "akhmad.maknur@gmail.com",
+								"password": "qwerty1234",
+								"user_name": "admin12345",
+								"name": "Akhmad Maknur Member",
+								"no_telephone": "082394717431"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"headers": {},
+						"content": {}
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"createOrderRequest": {
+				"title": "createOrderRequest",
+				"required": [
+					"promo",
+					"sender_addres",
+					"receiver_addres",
+					"customer_name",
+					"items"
+				],
+				"type": "object",
+				"properties": {
+					"promo": {
+						"type": "string"
+					},
+					"sender_addres": {
+						"type": "string"
+					},
+					"receiver_addres": {
+						"type": "string"
+					},
+					"customer_name": {
+						"type": "string"
+					},
+					"items": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Item"
+						},
+						"description": ""
+					}
+				},
+				"example": {
+					"promo": "MDK",
+					"sender_addres": "fdsafasdfadsfasdM",
+					"receiver_addres": "ACEsdfasdfasdfJ",
+					"customer_name": "Akhmad",
+					"items": [
+						{
+							"id_item": "1",
+							"item_quantity": "5"
+						}
+					]
+				}
+			},
+			"Item": {
+				"title": "Item",
+				"required": [
+					"id_item",
+					"item_quantity"
+				],
+				"type": "object",
+				"properties": {
+					"id_item": {
+						"type": "string"
+					},
+					"item_quantity": {
+						"type": "string"
+					}
+				},
+				"example": {
+					"id_item": "1",
+					"item_quantity": "5"
+				}
+			},
+			"createItemRequest": {
+				"title": "createItemRequest",
+				"required": [
+					"item_name",
+					"item_category",
+					"item_price",
+					"item_image"
+				],
+				"type": "object",
+				"properties": {
+					"item_name": {
+						"type": "string"
+					},
+					"item_category": {
+						"type": "string"
+					},
+					"item_price": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"item_image": {
+						"type": "string"
+					}
+				},
+				"example": {
+					"item_name": "Kipas",
+					"item_category": "Elektronik",
+					"item_price": 50000,
+					"item_image": "https://ik.imagekit.io/34nabbgwi/photo-1662540161854-image_2022-09-07_11-17-11_KsKUnFDUN.png"
+				}
+			},
+			"updateItemRequest": {
+				"title": "updateItemRequest",
+				"required": [
+					"item_name",
+					"item_category",
+					"item_price"
+				],
+				"type": "object",
+				"properties": {
+					"item_name": {
+						"type": "string"
+					},
+					"item_category": {
+						"type": "string"
+					},
+					"item_price": {
+						"type": "integer",
+						"format": "int32"
+					}
+				},
+				"example": {
+					"item_name": "Kipas Angin",
+					"item_category": "Elektronik",
+					"item_price": 50000
+				}
+			},
+			"userUpdateRequest": {
+				"title": "userUpdateRequest",
+				"required": [
+					"name",
+					"no_telephone",
+					"email",
+					"alamat"
+				],
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"no_telephone": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"alamat": {
+						"type": "string"
+					}
+				}
+			},
+			"userDeleteRequest": {
+				"title": "userDeleteRequest",
+				"required": [
+					"name",
+					"no_telephone",
+					"email",
+					"alamat",
+					"role"
+				],
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"no_telephone": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"alamat": {
+						"type": "string"
+					},
+					"role": {
+						"type": "string"
+					}
+				}
+			},
+			"createPromoRequest": {
+				"title": "createPromoRequest",
+				"required": [
+					"promo_name",
+					"promo_category",
+					"promo_code",
+					"promo_amount"
+				],
+				"type": "object",
+				"properties": {
+					"promo_name": {
+						"type": "string"
+					},
+					"promo_category": {
+						"type": "string"
+					},
+					"promo_code": {
+						"type": "string"
+					},
+					"promo_amount": {
+						"type": "integer",
+						"format": "int32"
+					}
+				},
+				"example": {
+					"promo_name": "Promo Akhir Tahun",
+					"promo_category": "Fashion",
+					"promo_code": "FASH",
+					"promo_amount": 5000
+				}
+			},
+			"updatePromoRequest": {
+				"title": "updatePromoRequest",
+				"required": [
+					"promo_name",
+					"promo_category",
+					"promo_code",
+					"promo_amount"
+				],
+				"type": "object",
+				"properties": {
+					"promo_name": {
+						"type": "string"
+					},
+					"promo_category": {
+						"type": "string"
+					},
+					"promo_code": {
+						"type": "string"
+					},
+					"promo_amount": {
+						"type": "integer",
+						"format": "int32"
+					}
+				},
+				"example": {
+					"promo_name": "Promo Akhir Tahun",
+					"promo_category": "Fashion",
+					"promo_code": "FASH3",
+					"promo_amount": 6000
+				}
+			},
+			"deletePromoRequest": {
+				"title": "deletePromoRequest",
+				"required": [
+					"promo_name",
+					"promo_category",
+					"promo_code",
+					"promo_amount"
+				],
+				"type": "object",
+				"properties": {
+					"promo_name": {
+						"type": "string"
+					},
+					"promo_category": {
+						"type": "string"
+					},
+					"promo_code": {
+						"type": "string"
+					},
+					"promo_amount": {
+						"type": "integer",
+						"format": "int32"
+					}
+				},
+				"example": {
+					"promo_name": "Promo Akhir Tahun",
+					"promo_category": "Fashion",
+					"promo_code": "FASH3",
+					"promo_amount": 6000
+				}
+			},
+			"updateUserRequest": {
+				"title": "updateUserRequest",
+				"required": [
+					"name"
+				],
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					}
+				},
+				"example": {
+					"name": "Akhmad Maknur lagi"
+				}
+			},
+			"createrOrderRequest": {
+				"title": "createrOrderRequest",
+				"required": [
+					"promo",
+					"sender_addres",
+					"receiver_addres",
+					"customer_name",
+					"items"
+				],
+				"type": "object",
+				"properties": {
+					"promo": {
+						"type": "string"
+					},
+					"sender_addres": {
+						"type": "string"
+					},
+					"receiver_addres": {
+						"type": "string"
+					},
+					"customer_name": {
+						"type": "string"
+					},
+					"items": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Item1"
+						},
+						"description": ""
+					}
+				},
+				"example": {
+					"promo": "MDK",
+					"sender_addres": "Makassar ji tawwa",
+					"receiver_addres": "makassar ji tawwa",
+					"customer_name": "akhmad",
+					"items": [
+						{
+							"id_item": 1,
+							"item_quantity": 2
+						}
+					]
+				}
+			},
+			"Item1": {
+				"title": "Item1",
+				"required": [
+					"id_item",
+					"item_quantity"
+				],
+				"type": "object",
+				"properties": {
+					"id_item": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"item_quantity": {
+						"type": "integer",
+						"format": "int32"
+					}
+				},
+				"example": {
+					"id_item": 1,
+					"item_quantity": 2
+				}
+			},
+			"updateOrderRequest": {
+				"title": "updateOrderRequest",
+				"required": [
+					"sender_addres",
+					"status"
+				],
+				"type": "object",
+				"properties": {
+					"sender_addres": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					}
+				},
+				"example": {
+					"sender_addres": "Makassar ji abca",
+					"status": "Paid"
+				}
+			},
+			"createCartRequest": {
+				"title": "createCartRequest",
+				"required": [
+					"id_item",
+					"quantity"
+				],
+				"type": "object",
+				"properties": {
+					"id_item": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"quantity": {
+						"type": "integer",
+						"format": "int32"
+					}
+				},
+				"example": {
+					"id_item": 1,
+					"quantity": 1
+				}
+			},
+			"updateCartRequest": {
+				"title": "updateCartRequest",
+				"required": [
+					"quantity"
+				],
+				"type": "object",
+				"properties": {
+					"quantity": {
+						"type": "integer",
+						"format": "int32"
+					}
+				},
+				"example": {
+					"quantity": 2
+				}
+			},
+			"RefreshTokenRequest": {
+				"title": "RefreshTokenRequest",
+				"required": [
+					"email",
+					"token"
+				],
+				"type": "object",
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"token": {
+						"type": "string"
+					}
+				},
+				"example": {
+					"email": "akhmad.maknur@gmail.com",
+					"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFraG1hZC5tYWtudXJAZ21haWwxLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTY2MDg4Nzk1MiwiZXhwIjoxNjYwODkxNTUyfQ.EvFi8la6yv84YsENWRZQPvJMMA8zfrseGj7B8FLuD0I"
+				}
+			},
+			"LoginRequest": {
+				"title": "LoginRequest",
+				"required": [
+					"user_name",
+					"password"
+				],
+				"type": "object",
+				"properties": {
+					"user_name": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"example": {
+					"user_name": "admin1234",
+					"password": "testing"
+				}
+			},
+			"RegisterRequest": {
+				"title": "RegisterRequest",
+				"required": [
+					"role",
+					"email",
+					"password",
+					"user_name",
+					"name",
+					"no_telephone"
+				],
+				"type": "object",
+				"properties": {
+					"role": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"user_name": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"no_telephone": {
+						"type": "string"
+					}
+				},
+				"example": {
+					"role": "ADMIN",
+					"email": "akhmad.maknur@gmail.com",
+					"password": "qwerty1234",
+					"user_name": "admin12345",
+					"name": "Akhmad Maknur Member",
+					"no_telephone": "082394717431"
+				}
+			}
+		}
+	},
+	"tags": [
+		{
+			"name": "Order"
+		},
+		{
+			"name": "Item"
+		},
+		{
+			"name": "User"
+		},
+		{
+			"name": "Promo"
+		},
+		{
+			"name": "Items"
+		},
+		{
+			"name": "Cart"
+		},
+		{
+			"name": "Misc",
+			"description": ""
+		}
+	]
+}
